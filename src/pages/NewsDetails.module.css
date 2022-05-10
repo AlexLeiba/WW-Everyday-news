@@ -1,0 +1,38 @@
+.newsDetails {
+  text-align: left;
+}
+.newsDetails img {
+  width: 100%;
+  height: auto;
+}
+
+.newsDetails a {
+  color: var(--text-secondary);
+}
+.newsDetails a:hover {
+  text-decoration: underline;
+}
+Button {
+  width: 180px;
+  height: 40px;
+  text-align: center;
+}
+
+/* Selectam iFrame-urile , care au ca valoare a atributului src un sir ce contine subsirul "youtube" */
+
+.newsDetails iframe[src*="youtube"] {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+
+/* Alert */
+
+#alert {
+  position: fixed;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+
+  background-color: var(--text-secondary) !important;
+}

@@ -1,0 +1,14 @@
+.removeButton {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 40px;
+  border-radius: 50% !important;
+  background-image: url("https://cdn.iconscout.com/icon/free/png-256/clear-1781787-1518214.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.removeButton:hover {
+  background-color: red;
+}

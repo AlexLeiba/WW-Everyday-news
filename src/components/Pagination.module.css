@@ -1,0 +1,8 @@
+.pagination {
+  width: 100px;
+}
+
+span#activePagination {
+  background-color: black;
+  border-color: var(--bg-primary);
+}
