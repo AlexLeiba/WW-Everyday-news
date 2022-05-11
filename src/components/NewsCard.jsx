@@ -7,13 +7,13 @@ import Button from "react-bootstrap/Button";
 import { useContext } from "react";
 import { ContextFavorites } from "../store/favorites/contextFavorites";
 import styles from "./NewsCard.module.css";
-import { FaBeer } from "react-icons";
+
 // aceasta componenta va fi responsabila pentru afisarea cardului pe ecran.
 // facem componenta reutilizabila.
 
 function NewsCard(props) {
   const { dispatchFavorites } = useContext(ContextFavorites);
-  const { images, title, description, id, closeButton, thumbnail } = props;
+  const { title, description, id, closeButton, thumbnail } = props;
   return (
     <Card className=" h-100 d-flex flex-column justify-content-between align-items-center bg-dark">
       <Link to={`/news/${id}`} className="h-100">
@@ -25,7 +25,7 @@ function NewsCard(props) {
       </Link>
       {closeButton && (
         <Button
-          className={`${styles.removeButton} bg-danger`}
+          className={`${styles.removeButton} `}
           onClick={() => {
             const actionResult = removeFromFavorites(id);
 

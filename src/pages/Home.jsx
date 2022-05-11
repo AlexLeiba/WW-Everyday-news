@@ -5,7 +5,7 @@ import { getNewsEndpoint } from "../api/guardianApi";
 import { Container } from "react-bootstrap";
 import NewsCardList from "../components/NewsCardList";
 import { getAdaptedData } from "../api/adaptors";
-import { GotoTop } from "../components/ScrollTop";
+import { Button } from "bootstrap";
 
 function Home() {
   const [scrollPosition, setSrollPosition] = useState(0);
@@ -49,13 +49,18 @@ function Home() {
     window.addEventListener("scroll", handleVisibleButton);
   });
 
-  const refScrollUp = useRef();
-
   const handleScrollUp = () => {
-    refScrollUp.current.scrollIntoView({ behavior: "smooth" });
+    window.scrollTo({
+      behavior: "smooth",
+      top: 0,
+    });
   };
+
+  function handleActivateClick() {
+    handleScrollUp();
+  }
   return (
-    <div ref={refScrollUp}>
+    <div>
       <Layout>
         <section>
           <Container className="mt-4">
@@ -103,8 +108,19 @@ function Home() {
             {/* propuri efective */}
           </Container>
         </section>
+        <button
+          style={{
+            width: 50,
+            height: 50,
+            borderRadius: 50,
+            backgroundColor: "black",
+            color: "white",
+          }}
+          onClick={handleScrollUp}
+        >
+          Up
+        </button>
       </Layout>
-      <GotoTop scrollUp={handleScrollUp} showGoTop={showGoTop} />
     </div>
   );
 }

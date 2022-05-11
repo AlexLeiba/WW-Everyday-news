@@ -2,13 +2,17 @@
   position: absolute;
   top: 2px;
   right: 2px;
-  width: 40px;
+  width: 30px;
+  height: 30px;
   border-radius: 50% !important;
+  border-color: transparent !important;
   background-image: url("https://cdn.iconscout.com/icon/free/png-256/clear-1781787-1518214.png");
   background-position: center;
   background-size: cover;
+  background-color: rgb(182, 23, 23) !important;
+  opacity: 0.5;
 }
 
 .removeButton:hover {
-  background-color: red;
+  opacity: 0.8;
 }

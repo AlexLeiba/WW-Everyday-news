@@ -2,7 +2,7 @@
   width: 100px;
 }
 
-span#activePagination {
-  background-color: black;
-  border-color: var(--bg-primary);
+#activePagination {
+  background-color: black !important;
+  border-color: var(--bg-primary) !important;
 }

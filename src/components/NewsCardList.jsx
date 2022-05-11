@@ -14,7 +14,14 @@ export function NewsCardList(props) {
         <Row>
           {newslist.map((news) => {
             return (
-              <Col xs={12} md={4} key={news.id} className="mb-4 pt-5">
+              <Col
+                xl={4}
+                md={6}
+                xs={12}
+                sm={12}
+                key={news.id}
+                className="mb-4 pt-5"
+              >
                 <NewsCard
                   id={news.id}
                   title={news.title}

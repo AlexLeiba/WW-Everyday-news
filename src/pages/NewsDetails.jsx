@@ -52,7 +52,7 @@ function NewsDetails() {
 
     setTimeout(() => {
       setStateAlert(false);
-    }, 2000);
+    }, 4000);
   }
 
   return (
@@ -66,11 +66,36 @@ function NewsDetails() {
           )}
           <Row>
             <Col>
-              <h1 className="pt-3 mb-5">{title}</h1>
-              <p className="fw-bold">{description}</p>
+              <h1 style={{ textAlign: "center" }}>{title}</h1>
+              <h5
+                style={{ marginTop: 20, marginBottom: 20, textAlign: "center" }}
+              >
+                {description}
+              </h5>
               {/* folosim __html daca datele din api sunt transmise sub forma (<html>) */}
-              <div dangerouslySetInnerHTML={{ __html: images }} />
-              <div className="d-flex justify-content-between mb-4">
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <div
+                  style={{ width: "80%", height: "80%" }}
+                  dangerouslySetInnerHTML={{ __html: images }}
+                />
+              </div>
+
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  alignItems: "center",
+                  marginRight: "10%",
+                  marginLeft: "10%",
+                  marginBottom: 4,
+                }}
+              >
                 <div>
                   <p className="fw-bold">{author}</p>
                   <p>{formattedDate}</p>
@@ -91,8 +116,18 @@ function NewsDetails() {
                   Adauga la favorite
                 </Button>
               </div>
-
-              <div dangerouslySetInnerHTML={{ __html: content }} />
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <div
+                  style={{ width: "80%", height: "80%" }}
+                  dangerouslySetInnerHTML={{ __html: content }}
+                />
+              </div>
             </Col>
           </Row>
         </Container>
