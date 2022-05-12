@@ -4,10 +4,12 @@ import styles from "./Header.module.css";
 import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
 import { ContextFavorites } from "../store/favorites/contextFavorites";
+import { style } from "react-stylesheet";
 
 function Header() {
   const [isDisplayed, setIsDisplayed] = useState(false);
   const { stateFavorites } = useContext(ContextFavorites);
+  const [toggleNav, setToggleNav] = useState(false);
 
   function handleMenuClick() {
     setIsDisplayed((prevIsDisplayed) => !prevIsDisplayed);
@@ -24,9 +26,22 @@ function Header() {
     setLocationstate(location.pathname);
   }, [location]);
 
+  function scrollWindow() {
+    let scrolled = window.scrollY;
+    if (scrolled >= 100) {
+      setToggleNav(true);
+    } else {
+      setToggleNav(false);
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener("scroll", scrollWindow);
+  });
+
   return (
     <header className={`${styles.header}`}>
-      <nav className={`${styles.nav}`}>
+      <nav className={toggleNav ? `${styles.nav2}` : `${styles.nav}`}>
         <Container className="d-flex justify-content-between align-items-center  pz-2">
           <Link to="/" className="" title="Home">
             <img
@@ -50,7 +65,9 @@ function Header() {
                   style={
                     locationState === "/category/football"
                       ? { color: "#fbb44c" }
-                      : { color: "azure" }
+                      : toggleNav
+                      ? { color: "azure" }
+                      : { color: "black" }
                   }
                 >
                   FOOTBALL
@@ -64,7 +81,9 @@ function Header() {
                   style={
                     locationState === "/category/games"
                       ? { color: "#fbb44c" }
-                      : { color: "azure" }
+                      : toggleNav
+                      ? { color: "azure" }
+                      : { color: "black" }
                   }
                 >
                   GAMES
@@ -77,7 +96,9 @@ function Header() {
                   style={
                     locationState === "/category/technology"
                       ? { color: "#fbb44c" }
-                      : { color: "azure" }
+                      : toggleNav
+                      ? { color: "azure" }
+                      : { color: "black" }
                   }
                 >
                   TECHNOLOGY
@@ -90,7 +111,9 @@ function Header() {
                   style={
                     locationState === "/category/fashion"
                       ? { color: "#fbb44c" }
-                      : { color: "azure" }
+                      : toggleNav
+                      ? { color: "azure" }
+                      : { color: "black" }
                   }
                 >
                   FASHION
@@ -103,7 +126,9 @@ function Header() {
                   style={
                     locationState === "/category/film"
                       ? { color: "#fbb44c" }
-                      : { color: "azure" }
+                      : toggleNav
+                      ? { color: "azure" }
+                      : { color: "black" }
                   }
                 >
                   FILM
@@ -116,7 +141,9 @@ function Header() {
                   style={
                     locationState === "/category/books"
                       ? { color: "#fbb44c" }
-                      : { color: "azure" }
+                      : toggleNav
+                      ? { color: "azure" }
+                      : { color: "black" }
                   }
                 >
                   BOOKS

@@ -1,11 +1,29 @@
-.layout{
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    
+.layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  transition: all 0.3s;
 }
 
-.layout main{
-flex: 1;
-text-align: center;
+.layout main {
+  flex: 1;
+  text-align: center;
+}
+
+.scrollButton {
+  background-image: url("https://cdn3.iconfinder.com/data/icons/faticons/32/arrow-up-01-512.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.3;
+  transform: translateY(0%);
+}
+
+.scrollButton2 {
+  background-image: url("https://cdn3.iconfinder.com/data/icons/faticons/32/arrow-up-01-512.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 1;
+  transform: translateY(-10%);
 }

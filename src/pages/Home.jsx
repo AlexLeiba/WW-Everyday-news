@@ -33,32 +33,6 @@ function Home() {
   const adaptedBooks = getAdaptedData(dataBooks);
   const adaptedFilm = getAdaptedData(dataFilm);
 
-  //DISPLAY HANDLER
-  const handleVisibleButton = () => {
-    const position = window.pageYOffset;
-    setSrollPosition(position);
-
-    if (scrollPosition > 50) {
-      return setshowGoTop("goTop");
-    } else if (scrollPosition < 50) {
-      return setshowGoTop("goTopHidden");
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleVisibleButton);
-  });
-
-  const handleScrollUp = () => {
-    window.scrollTo({
-      behavior: "smooth",
-      top: 0,
-    });
-  };
-
-  function handleActivateClick() {
-    handleScrollUp();
-  }
   return (
     <div>
       <Layout>
@@ -108,18 +82,6 @@ function Home() {
             {/* propuri efective */}
           </Container>
         </section>
-        <button
-          style={{
-            width: 50,
-            height: 50,
-            borderRadius: 50,
-            backgroundColor: "black",
-            color: "white",
-          }}
-          onClick={handleScrollUp}
-        >
-          Up
-        </button>
       </Layout>
     </div>
   );
