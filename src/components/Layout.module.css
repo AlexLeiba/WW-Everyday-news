@@ -17,6 +17,7 @@
   background-size: cover;
   transition: all 0.3;
   transform: translateY(0%);
+  border-color: azure;
 }
 
 .scrollButton2 {
@@ -26,4 +27,7 @@
   background-size: cover;
   transition: all 1;
   transform: translateY(-10%);
+}
+.scrollButton:hover {
+  background-color: #fbb44c;
 }
