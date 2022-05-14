@@ -66,7 +66,7 @@ function NewsDetails() {
           )}
           <Row>
             <Col>
-              <h1 style={{ textAlign: "center" }}>{title}</h1>
+              <h1 style={{ textAlign: "center", color: "black" }}>{title}</h1>
               <h5
                 style={{ marginTop: 20, marginBottom: 20, textAlign: "center" }}
               >

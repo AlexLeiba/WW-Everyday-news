@@ -5,11 +5,13 @@ import Container from "react-bootstrap/Container";
 import { Link } from "react-router-dom";
 import { ContextFavorites } from "../store/favorites/contextFavorites";
 import { style } from "react-stylesheet";
+import { fontWeight, position } from "react-stylesheet/lib/css";
 
 function Header() {
   const [isDisplayed, setIsDisplayed] = useState(false);
   const { stateFavorites } = useContext(ContextFavorites);
   const [toggleNav, setToggleNav] = useState(false);
+  const [dropMenuShow, setDropMenuShow] = useState(false);
 
   function handleMenuClick() {
     setIsDisplayed((prevIsDisplayed) => !prevIsDisplayed);
@@ -39,6 +41,10 @@ function Header() {
     window.addEventListener("scroll", scrollWindow);
   });
 
+  function handleDropMenuShow() {
+    setDropMenuShow(!dropMenuShow);
+  }
+
   return (
     <header className={`${styles.header}`}>
       <nav className={toggleNav ? `${styles.nav2}` : `${styles.nav}`}>
@@ -64,10 +70,10 @@ function Header() {
                   className={`p-3 text-uppercase ${styles.links}`}
                   style={
                     locationState === "/category/football"
-                      ? { color: "#fbb44c" }
+                      ? { color: "#fbb44c", fontWeight: 800 }
                       : toggleNav
-                      ? { color: "azure" }
-                      : { color: "black" }
+                      ? { color: "azure", fontWeight: 800 }
+                      : { color: "black", fontWeight: 800 }
                   }
                 >
                   FOOTBALL
@@ -80,10 +86,10 @@ function Header() {
                   className={`p-3 text-uppercase ${styles.links}`}
                   style={
                     locationState === "/category/games"
-                      ? { color: "#fbb44c" }
+                      ? { color: "#fbb44c", fontWeight: 800 }
                       : toggleNav
-                      ? { color: "azure" }
-                      : { color: "black" }
+                      ? { color: "azure", fontWeight: 800 }
+                      : { color: "black", fontWeight: 800 }
                   }
                 >
                   GAMES
@@ -95,10 +101,10 @@ function Header() {
                   className={`p-3 text-uppercase ${styles.links}`}
                   style={
                     locationState === "/category/technology"
-                      ? { color: "#fbb44c" }
+                      ? { color: "#fbb44c", fontWeight: 800 }
                       : toggleNav
-                      ? { color: "azure" }
-                      : { color: "black" }
+                      ? { color: "azure", fontWeight: 800 }
+                      : { color: "black", fontWeight: 800 }
                   }
                 >
                   TECHNOLOGY
@@ -110,45 +116,88 @@ function Header() {
                   className={`p-3 text-uppercase ${styles.links}`}
                   style={
                     locationState === "/category/fashion"
-                      ? { color: "#fbb44c" }
+                      ? { color: "#fbb44c", fontWeight: 800 }
                       : toggleNav
-                      ? { color: "azure" }
-                      : { color: "black" }
+                      ? { color: "azure", fontWeight: 800 }
+                      : { color: "black", fontWeight: 800 }
                   }
                 >
                   FASHION
                 </Link>
               </li>
-              <li className={isDisplayed ? "container" : null}>
-                <Link
-                  to="/category/film"
+
+              <li
+                className={isDisplayed ? "container" : null}
+                onClick={handleDropMenuShow}
+              >
+                <div
+                  to="/category/fashion"
                   className={`p-3 text-uppercase ${styles.links}`}
                   style={
-                    locationState === "/category/film"
-                      ? { color: "#fbb44c" }
-                      : toggleNav
-                      ? { color: "azure" }
-                      : { color: "black" }
+                    ({ position: "relative" },
+                    toggleNav
+                      ? { color: "azure", fontWeight: 800 }
+                      : { color: "black", fontWeight: 800 })
                   }
                 >
-                  FILM
-                </Link>
+                  Others
+                  <img
+                    className={`${styles.arrowDown}`}
+                    src="https://iconvulture.com/wp-content/uploads/2017/12/angle-arrow-down.png"
+                    alt="icon"
+                  />
+                  {dropMenuShow ? (
+                    <div className={`${styles.dropMenu}`}>
+                      <li className={isDisplayed ? "container" : null}>
+                        <Link
+                          to="/category/film"
+                          className={`px-3 pt-3 text-uppercase ${styles.links}`}
+                          style={
+                            locationState === "/category/film"
+                              ? { color: "#fbb44c" }
+                              : toggleNav
+                              ? { color: "black" }
+                              : { color: "azure" }
+                          }
+                        >
+                          FILM
+                        </Link>
+                      </li>
+                      <li className={isDisplayed ? "container" : null}>
+                        <Link
+                          to="/category/books"
+                          className={`px-3 pt-3 text-uppercase ${styles.links}`}
+                          style={
+                            locationState === "/category/books"
+                              ? { color: "#fbb44c", paddingLeft: 4 }
+                              : toggleNav
+                              ? { color: "black", paddingLeft: 4 }
+                              : { color: "azure", paddingLeft: 4 }
+                          }
+                        >
+                          BOOKS
+                        </Link>
+                      </li>
+                      <li className={isDisplayed ? "container" : null}>
+                        <Link
+                          to=""
+                          className={`px-3 pt-3 text-uppercase ${styles.links}`}
+                          style={
+                            toggleNav
+                              ? { color: "black", paddingLeft: 4 }
+                              : { color: "azure" }
+                          }
+                        >
+                          All categories
+                        </Link>
+                      </li>
+                    </div>
+                  ) : (
+                    <div></div>
+                  )}
+                </div>
               </li>
-              <li className={isDisplayed ? "container" : null}>
-                <Link
-                  to="/category/books"
-                  className={`p-3 text-uppercase ${styles.links}`}
-                  style={
-                    locationState === "/category/books"
-                      ? { color: "#fbb44c" }
-                      : toggleNav
-                      ? { color: "azure" }
-                      : { color: "black" }
-                  }
-                >
-                  BOOKS
-                </Link>
-              </li>
+
               <li className={isDisplayed ? "container" : null}>
                 <Link to="/favorites" className={`${styles.favorites} p-3 `}>
                   {/* setam stateul favorites sa arate cand are ceva adaugat la favorite */}

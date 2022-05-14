@@ -12,7 +12,7 @@ header {
   transition: all 0.3s;
 }
 .nav2 {
-  background: linear-gradient(rgba(0, 0, 0, 1), rgba(145, 145, 145, 0.9));
+  background: linear-gradient(rgba(0, 0, 0, 1), rgba(79, 79, 79, 0.95));
   transition: all 0.3s;
 }
 
@@ -32,6 +32,9 @@ header {
 
 ul .links {
   color: azure;
+  transition: all 0.3s;
+  position: relative;
+  cursor: pointer;
 }
 
 ul .links:hover {
@@ -39,11 +42,28 @@ ul .links:hover {
 }
 
 ul .favorites:hover {
-  color: #fbb44c;
-  background-color: rgb(75, 85, 94);
+  color: #c28325;
+  transition: all 0.3s;
 }
 ul .favorites {
   color: #fbb44c;
+  transition: all 0.3s;
+}
+
+.links .arrowDown {
+  width: 13px;
+  top: 22px;
+  position: absolute;
+  margin-left: 3px;
+}
+
+.links .dropMenu {
+  width: 170px;
+  height: 145px;
+  background: linear-gradient(rgba(197, 189, 189, 0.9), rgb(103, 101, 101));
+  position: absolute;
+  top: 55px;
+  border-radius: 5px;
 }
 
 @media (max-width: 768px) {

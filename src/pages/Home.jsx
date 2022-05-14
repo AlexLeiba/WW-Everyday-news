@@ -38,14 +38,14 @@ function Home() {
       <Layout>
         <section>
           <Container className="mt-4">
-            <h1>Football</h1>
+            <h1 style={{ color: "rgba(0, 0, 0, 1)" }}>Football</h1>
             <NewsCardList newslist={adaptedFootball} />
           </Container>
         </section>
 
         <section>
           <Container>
-            <h1>Games</h1>
+            <h1 style={{ color: "rgba(0, 0, 0, 1)" }}>Games</h1>
             <NewsCardList newslist={adaptedGames} />
             {/* propuri efective */}
           </Container>
@@ -53,7 +53,7 @@ function Home() {
 
         <section>
           <Container>
-            <h1>Technology</h1>
+            <h1 style={{ color: "rgba(0, 0, 0, 1)" }}>Technology</h1>
             <NewsCardList newslist={adaptedTech} />
             {/* propuri efective */}
           </Container>
@@ -61,7 +61,7 @@ function Home() {
 
         <section>
           <Container>
-            <h1>Fashion</h1>
+            <h1 style={{ color: "rgba(0, 0, 0, 1)" }}>Fashion</h1>
             <NewsCardList newslist={adaptedFashion} />
             {/* propuri efective */}
           </Container>
@@ -69,7 +69,7 @@ function Home() {
 
         <section>
           <Container>
-            <h1>Film</h1>
+            <h1 style={{ color: "rgba(0, 0, 0, 1)" }}>Film</h1>
             <NewsCardList newslist={adaptedFilm} />
             {/* propuri efective */}
           </Container>
@@ -77,7 +77,7 @@ function Home() {
 
         <section>
           <Container>
-            <h1>Books</h1>
+            <h1 style={{ color: "rgba(0, 0, 0, 1)" }}>Books</h1>
             <NewsCardList newslist={adaptedBooks} />
             {/* propuri efective */}
           </Container>
