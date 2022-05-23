@@ -11,8 +11,10 @@ The project covers the following concepts:
 Creating reusable components
 React hooks (useState, useEffect, useReducer, useContext)
 Routing
-State management (Context API + usereducer)
-Custom hooks
-CSS Modules
+- State management (Context API + usereducer)
+- Custom hooks
+- CSS Modules
+
+`texts`
 
 
