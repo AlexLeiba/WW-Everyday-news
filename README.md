@@ -15,6 +15,5 @@ Routing
 - Custom hooks
 - CSS Modules
 
-`texts`
 
 
