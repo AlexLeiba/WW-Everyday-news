@@ -1,6 +1,6 @@
 * Netlify link:   https://worldwide-everyday-news.netlify.app
 
-** The project has the following features:
+* The project has the following features:
 
 Display a category of news
 Paginate news
