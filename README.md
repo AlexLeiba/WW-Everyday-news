@@ -13,9 +13,11 @@ The project covers the following concepts:
 Creating reusable components
 React hooks (useState, useEffect, useReducer, useContext)
 Routing
-- State management (Context API + usereducer)
+- State management (Context API + useReducer)
 - Custom hooks
 - CSS Modules
+- The guardian Api real time requests
+
 
 
 
