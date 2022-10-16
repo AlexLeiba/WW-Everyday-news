@@ -1,6 +1,6 @@
  ##  Netlify link:   https://worldwide-everyday-news.netlify.app
 
- #The project has the following features:
+ # The project has the following features:
 
 - Display a category of news
 - Paginate news
@@ -8,7 +8,7 @@
 - Add/remove news to favorites
 - Persist favorite news through localStorage
 
- ##Concepts
+ ## Concepts
 The project covers the following concepts:
 
 Creating reusable components
