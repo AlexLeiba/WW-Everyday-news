@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import styles from "./Layout.module.css";
-// import Container from "react-bootstrap/Container";
+import React, { useState, useEffect } from 'react';
+import Header from './Header';
+import Footer from './Footer';
+import styles from './Layout.module.css';
 
 function Layout(props) {
   const [toggleNav, setToggleNav] = useState(false);
@@ -17,12 +16,12 @@ function Layout(props) {
   }
 
   useEffect(() => {
-    window.addEventListener("scroll", scrollWindow);
+    window.addEventListener('scroll', scrollWindow);
   });
 
   const handleScrollUp = () => {
     window.scrollTo({
-      behavior: "smooth",
+      behavior: 'smooth',
       top: 0,
     });
   };
@@ -41,10 +40,10 @@ function Layout(props) {
             width: 50,
             height: 50,
             borderRadius: 50,
-            position: "fixed",
+            position: 'fixed',
             bottom: 10,
             right: 10,
-            transition: "0.3s",
+            transition: '0.3s',
           }}
           onClick={handleScrollUp}
         ></button>

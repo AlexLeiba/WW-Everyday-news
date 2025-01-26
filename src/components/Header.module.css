@@ -6,14 +6,24 @@ header {
 }
 
 .nav {
-  height: 60px;
-  padding-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
   margin-bottom: 20px;
   transition: all 0.3s;
+
+  @media (min-width: 768px) {
+    height: 60px;
+  }
 }
 .nav2 {
-  background: linear-gradient(rgba(0, 0, 0, 1), rgba(79, 79, 79, 0.95));
+  background-color: black;
   transition: all 0.3s;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav img {
@@ -50,13 +60,6 @@ ul .favorites {
   transition: all 0.3s;
 }
 
-.links .arrowDown {
-  width: 13px;
-  top: 22px;
-  position: absolute;
-  margin-left: 3px;
-}
-
 .links .dropMenu {
   width: 170px;
   height: 145px;
@@ -91,6 +94,20 @@ ul .favorites {
     top: 77px;
     left: 0;
 
-    background-color: var(--bg-dark);
+    background: linear-gradient(
+      rgb(0, 0, 0),
+      rgba(79, 79, 79, 0.95),
+      rgba(79, 79, 79, 0.8)
+    );
+
+    @media (min-width: 768px) {
+      display: none;
+    }
+  }
+}
+
+.mobileDropdownIcons {
+  @media (min-width: 768px) {
+    display: none;
   }
 }

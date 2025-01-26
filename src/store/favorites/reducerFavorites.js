@@ -4,7 +4,7 @@ export const initialState = {
 
 export function reducerFavorites(state, action) {
   switch (action.type) {
-    case "ADD_TO_FAVORITES": {
+    case 'ADD_TO_FAVORITES': {
       let newState;
       let previousProducts = state.favorites;
       let newProduct = action.payload;
@@ -16,7 +16,6 @@ export function reducerFavorites(state, action) {
       if (foundProduct) {
         return state;
       } else {
-        // scrim cum arata noul state, scriind sintaxa ca si la vechiul state!
         newState = {
           favorites: [...previousProducts, newProduct],
         };
@@ -24,12 +23,11 @@ export function reducerFavorites(state, action) {
       }
     }
 
-    case "REMOVE_FROM_FAVORITES": {
+    case 'REMOVE_FROM_FAVORITES': {
       let previousProducts = state.favorites;
       let idProduct = action.payload;
 
       const filteredProducts = previousProducts.filter((product) => {
-        //   aceasta functie va returna toate produsele care nu sint egale(diferite) de id-ul venit de la (action)
         return product.id !== idProduct;
       });
 

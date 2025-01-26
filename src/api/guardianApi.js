@@ -1,14 +1,13 @@
-const API_KEY = "c87ccd38-518c-4143-bba5-dc7233732bbd";
-
-// la apelare adaugam parametri doriti, salvam intro variabila rezultatul, si trimitem lincul construit de api catre Fetch
+const API_KEY = process.env.REACT_APP_GUARDIAN_API_KEY;
 export function getNewsEndpoint(section, pageNumber, pageSize) {
+  if (!API_KEY) return;
   const queryParams = `?api-key=${API_KEY}&show-fields=all&page=${pageNumber}&page-size=${pageSize}&section=${section}`;
 
   return `https://content.guardianapis.com/search${queryParams}`;
 }
 
-// prin (id) voi identifica pe care stire am dat click
 export function getNewsDetailsEndpoint(id) {
+  if (!API_KEY) return;
   const queryParams = `?api-key=${API_KEY}&show-fields=all`;
   return `https://content.guardianapis.com/${id}${queryParams}`;
 }

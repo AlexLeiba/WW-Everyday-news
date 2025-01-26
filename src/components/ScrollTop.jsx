@@ -1,6 +1,5 @@
-import React from "react";
-import { style } from "react-stylesheet";
-import styles from "./Scroll.module.css";
+import React from 'react';
+import styles from './Scroll.module.css';
 
 export const GotoTop = ({ handleVisibleButton, showGoUp }) => {
   return (
